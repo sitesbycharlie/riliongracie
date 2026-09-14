@@ -37,34 +37,15 @@
   }
   .demo-strip b{color:var(--oxblood);}
 
-  .layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh;}
+  .layout{display:block;min-height:100vh;}
 
-  /* sidebar */
-  .side{
-    border-right:1px solid var(--line);
-    padding:36px 30px;
-    position:sticky;top:0;height:100vh;
-    display:flex;flex-direction:column;justify-content:space-between;
+  .topmark{
+    padding:28px 56px;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:baseline;
   }
-  .side-top .mark{
-    font-family:'Fraunces',serif;font-size:22px;font-weight:500;line-height:1.15;
-    margin-bottom:6px;
-  }
-  .side-top .mark em{font-style:italic;color:var(--oxblood);}
-  .side-top .loc{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink);opacity:0.6;letter-spacing:0.04em;}
-  .side-nav{margin-top:64px;display:flex;flex-direction:column;gap:2px;}
-  .side-nav a{
-    font-family:'JetBrains Mono',monospace;font-size:13px;
-    padding:10px 0;border-bottom:1px solid var(--line-soft);
-    display:flex;justify-content:space-between;align-items:center;
-    transition:padding-left 0.2s;
-  }
-  .side-nav a:hover{padding-left:6px;color:var(--oxblood);}
-  .side-nav a span{opacity:0.4;font-size:11px;}
-  .side-bottom{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;opacity:0.75;}
-  .side-bottom a{border-bottom:1px solid var(--line-soft);display:inline-block;}
-
-  .burger,.mob-topbar{display:none;}
+  .topmark .mark{font-family:'Fraunces',serif;font-size:20px;font-weight:500;}
+  .topmark .mark em{font-style:italic;color:var(--oxblood);}
+  .topmark .loc{font-family:'JetBrains Mono',monospace;font-size:11px;opacity:0.6;letter-spacing:0.04em;}
 
   main{overflow-x:hidden;}
 
@@ -93,9 +74,7 @@
   .hero-img{
     position:relative;
     background:url('https://riliongraciedonegaltown.com/static/images/teamTriangle.webp') center 30%/cover no-repeat;
-    filter:grayscale(100%) contrast(1.05);
   }
-  .hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%, var(--oxblood) 220%);mix-blend-mode:multiply;opacity:0.35;}
 
   section{padding:88px 56px;border-bottom:1px solid var(--line);}
   .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--oxblood);letter-spacing:0.05em;margin-bottom:18px;}
@@ -121,7 +100,7 @@
   /* instructors — offset image/text */
   .coach{display:grid;grid-template-columns:220px 1fr;gap:40px;margin-bottom:56px;align-items:start;}
   .coach:last-child{margin-bottom:0;}
-  .coach img{width:220px;height:220px;object-fit:cover;filter:grayscale(100%);border:1px solid var(--line);}
+  .coach img{width:220px;height:220px;object-fit:cover;border:1px solid var(--line);}
   .coach-role{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--oxblood);margin-bottom:8px;letter-spacing:0.04em;}
   .coach h3{font-family:'Fraunces',serif;font-size:28px;font-weight:500;margin-bottom:12px;}
   .coach p{opacity:0.72;font-size:14.5px;line-height:1.75;max-width:560px;}
@@ -159,7 +138,7 @@
   .clist{border-top:1px solid var(--line);}
   .citem{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line-soft);font-size:14px;}
   .citem span:first-child{font-family:'JetBrains Mono',monospace;font-size:11px;opacity:0.55;}
-  .map-box{border:1px solid var(--line);filter:grayscale(100%) contrast(0.95);min-height:320px;}
+  .map-box{border:1px solid var(--line);min-height:320px;}
   .map-box iframe{width:100%;height:100%;min-height:320px;border:0;}
 
   footer{
@@ -168,22 +147,7 @@
   }
 
   @media(max-width:900px){
-    .layout{grid-template-columns:1fr;}
-    .side{display:none;}
-    .mob-topbar{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:20px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50;
-    }
-    .mob-topbar .mark{font-family:'Fraunces',serif;font-size:18px;}
-    .burger{display:block;background:none;border:1px solid var(--line);padding:8px 12px;font-family:'JetBrains Mono',monospace;font-size:12px;}
-    .mob-drawer{
-      position:fixed;inset:0;background:var(--bg);z-index:100;
-      transform:translateY(-100%);transition:transform 0.3s ease;
-      padding:24px;display:flex;flex-direction:column;
-    }
-    .mob-drawer.open{transform:translateY(0);}
-    .mob-drawer a{font-family:'JetBrains Mono',monospace;font-size:20px;padding:18px 0;border-bottom:1px solid var(--line-soft);}
-    .mob-drawer .close{align-self:flex-end;font-family:'JetBrains Mono',monospace;border:1px solid var(--line);padding:8px 12px;background:none;margin-bottom:40px;}
+    .topmark{padding:20px 24px;}
     .hero{grid-template-columns:1fr;}
     .hero-img{min-height:280px;order:-1;}
     .hero-text{padding:44px 24px;}
@@ -200,40 +164,12 @@
 
 <div class="demo-strip">DEMO CONCEPT — <b>Rilion Gracie Donegal</b> — built by Sites by Charlie</div>
 
-<div class="mob-topbar">
-  <div class="mark">Rilion Gracie</div>
-  <button class="burger" onclick="document.getElementById('mobDrawer').classList.add('open')">MENU</button>
-</div>
-
-<div class="mob-drawer" id="mobDrawer">
-  <button class="close" onclick="document.getElementById('mobDrawer').classList.remove('open')">CLOSE</button>
-  <a href="#about" onclick="document.getElementById('mobDrawer').classList.remove('open')">About</a>
-  <a href="#instructors" onclick="document.getElementById('mobDrawer').classList.remove('open')">Instructors</a>
-  <a href="#classes" onclick="document.getElementById('mobDrawer').classList.remove('open')">Classes</a>
-  <a href="#timetable" onclick="document.getElementById('mobDrawer').classList.remove('open')">Timetable</a>
-  <a href="#contact" onclick="document.getElementById('mobDrawer').classList.remove('open')">Contact</a>
+<div class="topmark">
+  <div class="mark">Rilion Gracie <em>Donegal</em></div>
+  <div class="loc">DRUMROOSK BUSINESS PARK · EST. 2013</div>
 </div>
 
 <div class="layout">
-  <aside class="side">
-    <div class="side-top">
-      <div class="mark">Rilion<br>Gracie <em>Donegal</em></div>
-      <div class="loc">DRUMROOSK BUSINESS PARK</div>
-      <nav class="side-nav">
-        <a href="#about">About <span>01</span></a>
-        <a href="#instructors">Instructors <span>02</span></a>
-        <a href="#classes">Classes <span>03</span></a>
-        <a href="#timetable">Timetable <span>04</span></a>
-        <a href="#contact">Contact <span>05</span></a>
-      </nav>
-    </div>
-    <div class="side-bottom">
-      Est. 2013<br>
-      <a href="https://www.instagram.com/riliongracieireland">Instagram</a><br>
-      <a href="https://www.facebook.com/riliongraciedonegaltown/">Facebook</a>
-    </div>
-  </aside>
-
   <main>
     <section class="hero" style="border-bottom:1px solid var(--line);padding:0;">
       <div class="hero-text">
