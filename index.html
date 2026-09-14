@@ -100,7 +100,7 @@
   /* instructors — offset image/text */
   .coach{display:grid;grid-template-columns:220px 1fr;gap:40px;margin-bottom:56px;align-items:start;}
   .coach:last-child{margin-bottom:0;}
-  .coach img{width:220px;height:220px;object-fit:cover;border:1px solid var(--line);}
+  .coach img{width:220px;height:220px;object-fit:cover;object-position:center 15%;border:1px solid var(--line);}
   .coach-role{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--oxblood);margin-bottom:8px;letter-spacing:0.04em;}
   .coach h3{font-family:'Fraunces',serif;font-size:28px;font-weight:500;margin-bottom:12px;}
   .coach p{opacity:0.72;font-size:14.5px;line-height:1.75;max-width:560px;}
@@ -145,11 +145,12 @@
     .hero-img{min-height:280px;order:-1;}
     .hero-text{padding:44px 24px;}
     .about,.coach,.contact{grid-template-columns:1fr;}
-    .coach img{width:100%;height:240px;}
+    .coach img{width:100%;height:280px;object-position:center 12%;}
     section{padding:56px 24px;}
     footer{padding:28px 24px;}
-    .stat-row{flex-wrap:wrap;}
-    .stat{flex:1 1 45%;}
+    .stat-row{flex-wrap:wrap;row-gap:20px;}
+    .stat{flex:1 1 45%;padding:20px 16px 4px 0;}
+    .stat:nth-child(n+3){border-top:1px solid var(--line-soft);padding-top:20px;}
   }
 </style>
 </head>
